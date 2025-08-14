@@ -11,25 +11,26 @@ It includes scripts for:
 ---
 
 ## 📂 Project Structure
+```text
 Final_Project/
 │
-├─ fullmodel_submit.ipynb # Main training notebook (entry point)
+├─ fullmodel_submit.ipynb           # Main training notebook (entry point)
 │
 ├─ preprocessing/
-│ ├─ generate_training_heatmaps.py # Generate training anomaly heatmaps
-│ ├─ create_ccHarmony_csv.py # Build composite-real-heatmap CSV mapping
+│   ├─ generate_training_heatmaps.py  # Generate training anomaly heatmaps
+│   ├─ create_ccHarmony_csv.py        # Build composite-real-heatmap CSV mapping
 │
 ├─ visualization/
-│ └─ paper_fig_hybrid_maps.py # Generate paper figure visualizations
+│   └─ paper_fig_hybrid_maps.py       # Generate paper figure visualizations
 │
-├─ data/ # Dataset folder (see below)
+├─ data/                              # Dataset folder (see below)
 │
 └─ README.md
 
 ## 🖼️ Model Architecture
 
 <div align="center">
-  <img src="mastercalss-.drawio.png" alt="Model Structure" width="800"/>
+  <img src="MP_model.png" alt="Model Structure" width="800"/>
 </div>
 
 The model is based on U-Net with a two-level encoder-decoder, followed by global average pooling and a GIFT module to enhance channel-wise attention. A foreground mask is used at inference time to ensure that only the foreground is altered.
@@ -44,6 +45,7 @@ Heatmaps are generated **directly from composite images** using frequency and co
 - 🔗 Dataset link: [ccHarmony (Google Drive)](https://drive.google.com/drive/folders/1Eva_tq4DEfPAlw4Oh5gS0_8jMqmk_gXg?usp=drive_link)
 
 - Dataset: Place the ccHarmony dataset under data/ with the following structure:
+```text
     data/
     └─ ccHarmony/
       ├─ composite/
@@ -51,16 +53,6 @@ Heatmaps are generated **directly from composite images** using frequency and co
       ├─ freq1/                # Folder for generated heatmaps
       └─ ccHarmony_Frequency.csv
 
-
----
-
-### 📸 Test Images (Separate from Dataset)
-
-To evaluate the trained model on novel or unseen composite images, you can use the sample test set provided below:
-
-- 📁 Test images (Google Drive): [Download Link](https://drive.google.com/drive/folders/1S3UmYg7Dx2bIB9s5P4-QoXFIhHeu2306?usp=sharing)
-
-These images are not part of the ccHarmony dataset and are used for visual evaluation only. They follow the same format: composite image + GroundTruth.
 
 ---
 
@@ -77,9 +69,7 @@ These images are not part of the ccHarmony dataset and are used for visual evalu
 The core implementation is in:
 
 ```bash
-📘 MasterClass_final.ipynb
-
-
+📘 fullmodel_submit.ipynb
 ---
 
 ##  📚 Citation
