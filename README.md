@@ -25,6 +25,8 @@ Final_Project/
 │
 ├─ data/                              # Dataset folder (see below)
 │
+├─ pretrained weight/                              # (see below)
+│
 └─ README.md
 ```
 
@@ -33,7 +35,7 @@ Final_Project/
 ## 🖼️ Model Architecture
 
 <div align="center">
-  <img src="mastercalss-.drawio.png" alt="Model Structure" width="800"/>
+  <img src="MP_model.png" alt="Model Structure" width="800"/>
 </div>
 
 The model is based on U-Net with a two-level encoder-decoder, followed by global average pooling and a GIFT module to enhance channel-wise attention. A foreground mask is used at inference time to ensure that only the foreground is altered.
@@ -63,7 +65,7 @@ data/
 
 - 📥 [Download trained model weights (Google Drive)](https://drive.google.com/drive/folders/1mtueecc8YBBkZYyT4COflL4NLMNmfCPZ?usp=drive_link)
 - File format: `.pth`  
-- Saved weights trained for 30, 50, and 70 epochs, with decreasing batch size and using perceptual supervision
+- Saved weights trained for various heatmap(fullmodel_frequency, Color only ,Color-frequency5:5,Color-frequency3:7,Color-frequency7:3,)
 
 ---
 
