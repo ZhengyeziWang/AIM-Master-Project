@@ -26,11 +26,14 @@ Final_Project/
 ├─ data/                              # Dataset folder (see below)
 │
 └─ README.md
+```
+
+---
 
 ## 🖼️ Model Architecture
 
 <div align="center">
-  <img src="MP_model.png" alt="Model Structure" width="800"/>
+  <img src="mastercalss-.drawio.png" alt="Model Structure" width="800"/>
 </div>
 
 The model is based on U-Net with a two-level encoder-decoder, followed by global average pooling and a GIFT module to enhance channel-wise attention. A foreground mask is used at inference time to ensure that only the foreground is altered.
@@ -39,20 +42,20 @@ The model is based on U-Net with a two-level encoder-decoder, followed by global
 
 ## 📁 Dataset
 
-The **ccHarmony** dataset contains paired *composite* *heatmap* and *real* images for image harmonization tasks.  
+The **ccHarmony** dataset contains paired *composite*, *heatmap*, and *real* images for image harmonization tasks.  
 Heatmaps are generated **directly from composite images** using frequency and color anomaly analysis, without requiring extra labels or masks.
 
 - 🔗 Dataset link: [ccHarmony (Google Drive)](https://drive.google.com/drive/folders/1Eva_tq4DEfPAlw4Oh5gS0_8jMqmk_gXg?usp=drive_link)
 
-- Dataset: Place the ccHarmony dataset under data/ with the following structure:
+Dataset folder structure:
 ```text
-    data/
-    └─ ccHarmony/
-      ├─ composite/
-      ├─ real/
-      ├─ freq1/                # Folder for generated heatmaps
-      └─ ccHarmony_Frequency.csv
-
+data/
+└─ ccHarmony/
+    ├─ composite/
+    ├─ real/
+    ├─ freq1/                # Folder for generated heatmaps
+    └─ ccHarmony_Frequency.csv
+```
 
 ---
 
@@ -68,13 +71,13 @@ Heatmaps are generated **directly from composite images** using frequency and co
 
 The core implementation is in:
 
-```bash
-📘 fullmodel_submit.ipynb
+📘 `fullmodel_submit.ipynb`
+
 ---
 
-##  📚 Citation
+## 📚 Citation
 
-
+```bibtex
 @inproceedings{niu2023,
 title={ccHarmony: Color-Checker Guided Illumination Estimation for Image Harmonization},
 author={Niu, Yuge and Zhou, Hong and Huang, Xinxin and Deng, Cheng and Ding, Xuan and Yao, Wei and Dong, Xiaopeng},
@@ -82,7 +85,6 @@ booktitle={Proceedings of the IEEE/CVF International Conference on Computer Visi
 year={2023},
 pages={6481--6491}
 }
+```
 
 🔗 Dataset GitHub: [https://github.com/bcmi/Image-Harmonization-Dataset-ccHarmony](https://github.com/bcmi/Image-Harmonization-Dataset-ccHarmony)
-
----
