@@ -38,7 +38,7 @@ Final_Project/
   <img src="MP_model.png" alt="Model Structure" width="800"/>
 </div>
 
-The model is based on U-Net with a two-level encoder-decoder, followed by global average pooling and a GIFT module to enhance channel-wise attention. A foreground mask is used at inference time to ensure that only the foreground is altered.
+The model is a U-Net–style encoder–decoder with residual blocks and skip connections. A heatmap guides the network to focus on inconsistent regions during feature extraction. The final output is a harmonized image.
 
 ---
 
